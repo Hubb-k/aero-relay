@@ -1,0 +1,15 @@
+# AeroRelay configuration file
+# Fill in your relay pairs below
+
+[[relays]]
+name = "hub-to-osmosis"
+src_chain = "cosmoshub-4"                  # Source chain: Cosmos Hub (catch write_packet events here)
+src_rpc = "https://cosmos-rpc.publicnode.com:443"
+
+src_channel = "channel-141"                # Local channel on Hub
+src_port = "transfer"
+
+dst_chain = "osmosis-1"
+dst_rpc = "https://cosmos-rpc.publicnode.com"   # HTTP is fine for polling; use WS if needed: wss://osmosis-rpc.publicnode.com/websocket
+dst_channel = "channel-0"                  # Counterparty channel on Osmosis
+dst_port = "transfer"

@@ -1,0 +1,13 @@
+[[relays]]
+name = "example-relay"
+src_chain = "cosmoshub-4"
+src_rpc = "https://rpc.example.com:443"
+
+src_channel = "channel-0"
+src_port = "transfer"
+
+dst_chain = "osmosis-1"
+dst_rpc = "https://rpc-osmosis.example.com"
+
+dst_channel = "channel-0"
+dst_port = "transfer"

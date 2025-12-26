@@ -1,0 +1,56 @@
+[package]
+name = "aero-relay"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "aero_relay"
+path = "src/lib.rs"
+
+[dependencies]
+sysinfo = { version = "0.30", optional = true }
+tokio = { version = "1", features = ["full"] }
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+toml = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+
+# QUIC + TLS
+quinn = { version = "0.11", features = ["runtime-tokio", "rustls"] }
+rustls = { version = "0.23", features = ["aws_lc_rs"] }
+rustls-pki-types = "1.13"
+rcgen = "0.13"
+
+# Crypto
+snow = "0.9"
+lazy_static = "1.4"
+
+# Tendermint / IBC
+tendermint-rpc = { version = "0.40", features = ["http-client"] }
+tendermint = "0.40.4"
+
+# Protobuf & Serde
+ibc-proto = "0.51"
+prost = "0.13"
+prost-types = "0.13"
+bytes = "1"
+futures = "0.3"
+hex = "0.4"
+serde_json = "1.0"
+base64 = "0.22"
+
+# Logging & Utils
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["fmt", "env-filter", "ansi"] }
+tracing-appender = "0.2"
+blake3 = "1.5"
+chrono = { version = "0.4", features = ["clock"] }
+
+# ZK proofs (optional feature)
+halo2_proofs = { git = "https://github.com/privacy-scaling-explorations/halo2.git", optional = true }
+rand_core = { version = "0.6", features = ["getrandom"] }
+
+[features]
+metrics = ["sysinfo"]
+default = []
+encryption-proof = ["dep:halo2_proofs"]
