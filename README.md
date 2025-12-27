@@ -59,5 +59,5 @@ Contact: [@Kerim_mX](https://x.com/Kerim_mX) on X.
 
 ## License
 
-MIT [License](LICENSE.txt). Still WIP — flies, but not yet to the moon 
+MIT [License](LICENSE). Still WIP — flies, but not yet to the moon 
 Technical implementation powered by Grok and Gemini.
